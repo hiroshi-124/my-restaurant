@@ -1,0 +1,15 @@
+<header>
+  <%= link_to root_path do %>
+    <%= image_tag "/images/logo.svg", class: "logo", alt: "WCBカフェ ホーム" %>
+  <% end %>
+  
+  <div id = "menu-bar" class = "fas fa-bars"></div>
+  <nav class="navbar">
+    <%= link_to 'サイトへ', root_path %>
+    <%= link_to '管理サイトトップ', dashboard_path %>
+    <%= link_to '記事作成', dashboard_posts_path %>
+    <%= link_to '商品作成', dashboard_menus_path %>
+    <%= link_to '工事中〜', "#工事中〜" %>
+  </nav>
+    
+</header>

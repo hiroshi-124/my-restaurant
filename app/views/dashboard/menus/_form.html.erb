@@ -1,0 +1,26 @@
+<%= form_with model: menu, url:  dashboard_menus_path, local: true do |f| %>
+  
+  <div class="">
+    <%= f.text_field :name, label: "商品名", placeholder: "20文字以内", class: "inputBox" %>
+  </div>
+  
+  <div class="">
+    <%= f.text_field :price, label: "値段", placeholder: "値段", class: "inputBox"  %>
+  </div>
+  
+  <div class="">
+    <%= f.text_area :description, label: "内容", class: 'textBox',  placeholder: "200文字以内" %>
+  </div>
+  
+  <div class="">
+    <%= f.file_field :image %>
+  </div>
+  
+  <div class = "button">
+    <%= f.submit "登録", class: "btn" %>
+  </div>
+  
+  
+<% end %>
+
+  

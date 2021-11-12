@@ -1,0 +1,66 @@
+.news {
+  padding-top: 9%;
+  min-height: 100vh;
+  background: url(../images/home-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.news .box-container .box .content {
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.3);
+  margin-bottom: .7rem;
+  border-radius: 0.5rem;
+}
+
+.news .box-container .box .content.show-content {
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.3);
+  margin-bottom: .7rem;
+  border-radius: 0.5rem;
+}
+
+
+.news .box-container .box .content .post-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  display: block;
+}
+
+.news .box-container .box .content p {
+  font-size: 1.6rem;
+  color: #666;
+  margin-bottom: 0 !important;
+}
+
+.news .box-container .box .content .post-cat {
+  cursor: pointer;
+  display: inline;
+  margin-right: .3rem;
+  font-size: 1.3rem;
+}
+
+.news .box-container .box .content .post-cat span {
+  color: var(--blue);
+}
+
+.news .box-container .box .content .post-cat:hover {
+  font-size: 1.6rem;
+}
+
+.news .box-container .box .content .post-next {
+  text-decoration: underline !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.3rem;
+}
+
+.news .box-container .box .content .post-next:hover {
+  color: var(--blue);
+}
+

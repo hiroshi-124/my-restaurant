@@ -1,0 +1,84 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<session class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <h3 class="heading"><span>ログイン</span></h3>
+      <h3>email：1412hatty@gmail.com</h3>
+      <h3>password：password</h3>
+
+      <hr>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="form-group">
+          <%=
+            f.email_field :email,
+            class: "inputBox #{"is-invalid" if alert }",
+            autofocus: "true",
+            required: "required",
+            autocomplete: "email",
+            placeholder: "メールアドレス"
+          %>
+          <% if alert %>
+          <span class="samazon-error-message">
+            <strong>メールアドレスが正しくない可能性があります。</strong>
+          </span>
+          <% end %>
+        </div>
+
+        <div class="form-group">
+          <%=
+            f.password_field :password,
+            class: "inputBox #{"is-invalid" if alert }",
+            autofocus: "true",
+            autocomplete: "current-password",
+            placeholder: "パスワード"
+          %>
+
+          <% if alert %>
+          <span class="samazon-error-message">
+            <strong>パスワードが正しくない可能性があります。</strong>
+          </span>
+          <% end %>
+        </div>
+
+
+        <div class="form-check">
+          <%=  f.check_box :remember_me, class: "form-check-input" %>
+          <%=  f.label :remember_me, "次回から自動的にログインする", class: "form-check-label samazon-check-label w-100" %>
+        </div>
+
+
+        <div class="button">
+          <%=  f.submit "ログイン", class: "btn", id: "btn_id" %>
+        </div>
+
+          <% if resource_is_user? %>
+          <%= link_to "パスワードをお忘れの場合", new_user_password_path, class: "btn btn-link mt-3 d-flex justify-content-center samazon-login-text" %>
+          <% end %>
+        <% end %>
+
+      <hr>
+
+      <% if resource_is_user? %>
+        <div class="form-group">
+          <%= link_to "新規登録", new_user_registration_path, class: "btn btn-link mt-3 d-flex justify-content-center samazon-login-text" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

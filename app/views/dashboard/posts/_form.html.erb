@@ -1,0 +1,10 @@
+<%= simple_form_for(@post, url:  dashboard_posts_path, local: true) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :title, label: "タイトル", placeholder: "20文字以内" %>
+  <%= f.input :content, as: :summernote, label: "内容",  placeholder: "200文字以内" %>
+  <div class="button">
+    <%=  f.submit "投稿へ", class: "btn", id: "btn_id" %>
+  </div>
+  
+<% end %>

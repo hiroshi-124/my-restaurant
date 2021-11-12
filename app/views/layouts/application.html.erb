@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name = 'viewport' content = 'width=device-width, initial-scale=1'>
+    <title>WCB CAFE</title>
+    <meta name = 'description' content = 'ブレンドコーヒートヘルシーなオーガニックフードを提供するカフェ'>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src='https://kit.fontawesome.com/8c770f7830.js' crossorigin='anonymous'></script>
+  </head>
+
+  <body>
+    <%= render partial: 'layouts/header' %>
+    
+    <%= yield %>
+    
+    <%= render partial: 'layouts/footer' %>
+    <%= link_to '', "#home", class: "fas fa-angle-up", id: "scroll-top" %>
+  </body>
+</html>

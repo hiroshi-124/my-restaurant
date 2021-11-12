@@ -1,0 +1,17 @@
+<section id="news" class="news">
+  
+  <div class = "box-container">
+    <div class = "box">
+      <div class = "content show-content">
+        <p><%= l @post.created_at %></p>
+        <h3 class = "post-title"><%= @post.title%></h3>
+        <p class="post-cat"><span>#</span>お店の紹介</p>
+        <p class="post-cat"><span>#</span>お店の紹介</p>
+
+        <p><%== @post.content %></p>
+      </div>
+    </div>
+  </div>
+  <%= link_to "⬅ 戻る", posts_path %>
+  
+</section>

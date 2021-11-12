@@ -1,0 +1,106 @@
+<section class="home" id="home">
+  <div class = "content">
+    <h3 class = "page-title">We'll Make Your Day</h3>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          Voluptas accusamus tempore temporibus rem amet laudantium 
+          animi optio voluptatum. Natus obcaecati unde porro nostrum 
+          ipsam itaque impedit incidunt rem quisquam eos!</p>
+    <%= link_to 'メニューを見る', "#menu", class: "btn" %>
+  </div>
+  
+</section>
+
+<section class="menu" id="menu">
+  
+  <%= render partial: 'menus/menu' %>
+  
+</section>
+
+<section class = "location" id= "location" >
+  <h1 class="heading"><span>Location</span></h1>
+  
+  <div class = "box-content">
+    <div class = "info-content">
+      <h1>Web Cafe駅店</h1>
+      <hr>
+      <p>
+        住所： 東京都〇〇区<br>
+        〇〇〇〇〇〇〇 000-22-1<br>
+        〇〇〇〇<br>
+        電話： 03-1111-1111<br>
+        営業時間： 10:00〜20:00<br>
+        休日：水曜
+      </p>
+    </div>
+    
+    <div class="map-content">
+      <%= restaurant_map %>
+    </div>
+  </div>
+  
+  
+</section>
+
+<section id="contact" class="contact">
+  
+  <h1 class="heading"> <span>Contact</span></h1>
+
+  <%= form_with model: @contact, local: true, html:{ onSubmit: "return checkSubmit()"} do |f| %>
+  
+    <div class="">
+      <%= f.text_field :name, 
+        autofocus: true,
+        autocpomplete: "name",
+        placeholder: "名前",
+        required: "",
+        class: 'inputBox' %>
+    </div>
+  
+    <div class="">
+      <%= f.email_field :email, 
+        autofocus: true,
+        autocpomplete: "E-mail",
+        placeholder: "メールアドレス",
+        required: "",
+        class: 'inputBox' %>
+    </div>
+    
+    <div class="">
+      <%= f.text_field :subject, 
+        autofocus: true,
+        autocpomplete: "Subject",
+        placeholder: "件名",
+        required: "",
+        class: 'inputBox' %>
+    </div>
+    
+    <div class="">
+      <%= f.text_field :phone_numb, 
+        autofocus: true,
+        autocpomplete: "Phone Number",
+        placeholder: "電話番号",
+        required: "",
+        class: 'inputBox' %>
+    </div>
+  
+  
+    <div class="">
+      <%= f.text_area :message,
+        autofocus: true,
+        autocpomplete: "message",
+        placeholder: "お問い合わせ内容",
+        required: "",
+        rows: "5",
+        class: 'textBox' %>
+    </div>
+    
+    <div class="">
+      <%= f.select :answer_to_return, @answer.keys.map {|k| [k, k]}, {prompt:"折返し方法"}, { class: 'inputBox', required: "" } %>
+    </div>
+  
+    <div class="button">
+      <%= f.submit "送信", class: "btn", id: "btn_id" %>
+    </div>
+  <% end %>
+    
+</section>

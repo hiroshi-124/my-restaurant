@@ -1,0 +1,55 @@
+.home {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  align-items: center;
+  background: url(../images/home-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .content h3 {
+  font-size: 5rem;
+  color: #333;
+}
+
+.home .content p {
+  font-size: 1.7rem;
+  color: #666;
+  padding: 1rem;
+}
+
+.location .box-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:2rem;
+
+  .info-content {
+    flex:1 1 42rem;
+    margin-bottom: 5rem;
+    
+    h1 {
+      color: var(--blue);
+      font-size: 4rem;
+      margin-top: .5rem;
+    }
+    
+    p {
+      padding:1rem 0;
+      font-size: 1.4rem;
+      line-height: 1.7;
+    }
+  }
+  
+  .map-content {
+    flex:1 1 42rem;
+    
+    iframe{
+      border-radius: 1rem;
+      width: 100%;
+    }
+  }
+  
+}

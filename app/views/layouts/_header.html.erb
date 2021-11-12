@@ -1,0 +1,16 @@
+<header>
+  <%= link_to root_path do %>
+    <%= image_tag "/images/logo.svg", class: "logo", alt: "WCBカフェ ホーム" %>
+  <% end %>
+  
+  <div id = "menu-bar" class = "fas fa-bars"></div>
+  
+  <nav class = "navbar">
+    <%= link_to 'home', root_path %>
+    <%= link_to 'news', posts_path %>
+    <%= link_to 'menu', '#menu' %>
+    <%= link_to 'location', '#location' %>
+    <%= link_to 'contact', '#contact' %>
+  </nav>
+  
+</header>
