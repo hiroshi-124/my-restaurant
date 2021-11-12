@@ -1,21 +1,22 @@
 <section id="news" class="news">
   
   <h1 class="heading"><span></span>記事一覧</span></h1>
+  <%= link_to '+New Post', new_dashboard_post_path, class: "btn" %>
   <div class = "box-container">
     <div class = "box">
       <% @posts.each do |post| %>
         <div class =  "content">
           <p><%= l post.created_at  %></p>
-          <%= link_to post.title, post, class: "post-title" %>
+          <%= link_to post.title, dashboard_post_path(post), class: "post-title" %>
           <p class="post-cat"><span>#</span>お店の紹介</p>
           <p class="post-cat"><span>#</span>お店の紹介</p>
           
         
           <p><%=raw truncate(post.content.html_safe) %></p>
-          <%= link_to "続きを読む", post, class: "post-next" %>
+          <%= link_to "続きを読む", dashboard_post_path(post), class: "post-next" %>
           <div>
             <%= link_to 'Edit', edit_dashboard_post_path(post), class: "btn" %>
-            <%= link_to 'Destroy', dashboard_posts_path, class: "btn", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Destroy', dashboard_post_path(post), class: "btn", method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
           
         </div>
@@ -25,7 +26,7 @@
   </div>
 
     
-  <%= link_to '+New Post', new_dashboard_post_path %>
+  
 
 
 </section>

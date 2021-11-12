@@ -1,4 +1,4 @@
-<%= form_with model: menu, url:  dashboard_menus_path, local: true do |f| %>
+<%= form_with model: menu, url: url, local: true do |f| %>
   
   <div class="">
     <%= f.text_field :name, label: "商品名", placeholder: "20文字以内", class: "inputBox" %>
@@ -6,6 +6,10 @@
   
   <div class="">
     <%= f.text_field :price, label: "値段", placeholder: "値段", class: "inputBox"  %>
+  </div>
+  
+  <div class="">
+    <%= f.text_field :kcal, label: "カロリー", placeholder: "カロリー", class: "inputBox"  %>
   </div>
   
   <div class="">

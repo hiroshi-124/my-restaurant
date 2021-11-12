@@ -1,4 +1,4 @@
-<%= simple_form_for(@post, url:  dashboard_posts_path, local: true) do |f| %>
+<%= simple_form_for(post, url: url, local: true, action: :action) do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :title, label: "タイトル", placeholder: "20文字以内" %>

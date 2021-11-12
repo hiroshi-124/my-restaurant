@@ -4,7 +4,7 @@ class Dashboard::PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   
   def index
-    @posts = Post.all
+    @posts = Post.all.order(id: "DESC")
   end
   
   def show
@@ -26,15 +26,13 @@ class Dashboard::PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
-    else
-      render :edit, status: :unprocessable_entity
+      redirect_to dashboard_posts_path, notice: 'Post was successfully updated.'
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    redirect_to dashboard_posts_url, notice: 'Post was successfully destroyed.'
   end
   
    private

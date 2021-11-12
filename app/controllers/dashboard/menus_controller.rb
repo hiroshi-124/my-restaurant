@@ -4,7 +4,7 @@ class Dashboard::MenusController < ApplicationController
   before_action :set_menu, only: %i[edit update destroy]
   
   def index
-    @menus = Menu.all
+    @menus = Menu.all.order(id: "DESC")
   end
   
   def new
@@ -26,14 +26,12 @@ class Dashboard::MenusController < ApplicationController
   def update
     if @menu.update(menu_params)
       redirect_to dashboard_menus_path, notice: 'menu was successfully updated.'
-    else
-      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @menu.destroy
-    redirect_to dashboard_menus_path, notice: 'menu was successfully destroyed.'
+    redirect_to dashboard_menus_url, notice: 'menu was successfully destroyed.'
   end
   
    private

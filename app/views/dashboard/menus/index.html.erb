@@ -1,7 +1,30 @@
 <section class="menu" id="menu">
   <div class = "menus">
-    <%= render partial: 'menus/menu' %>
-    <%= link_to '+New Menu', new_dashboard_menu_path %>
+    
+  <h1 class="heading"><span>Menu</span></h1>
+    <%= link_to '+New Menu', new_dashboard_menu_path, class: "btn" %>
+      
+    <div class="box-container">
+      <% @menus.each do |menu| %>
+        <div class="box">
+          <span class="price">￥<%= menu.price %></span>
+          <% if menu.image.present? %>
+            <%= image_tag menu.image.to_s %>
+          <% else %>
+            <%= image_tag "/images/s-img-1.jpg", alt: "" %>
+          <% end %>
+          <h3><%= menu.name %></h3>
+          <h3><%= menu.kcal %><em>kcal</em></h3>
+          <div>
+            <%= link_to 'Edit', edit_dashboard_menu_path(menu), class: "btn" %>
+            <%= link_to 'Destroy', dashboard_menu_path(menu), class: "btn", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+          
+        </div>
+      <% end %>
+    </div>
+    
   </div>
   
 </section>
+
